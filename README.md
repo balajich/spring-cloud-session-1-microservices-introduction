@@ -8,7 +8,7 @@ Overview
 - Run payroll-api service on 9010. Where it takes employee id and returns employee salary.
 - Run insurance-api service on 9020. Where it takes employee id and returns employee sum insured.
 - Run Gateway service on 8080 and reverse proxy requests to all the services (employee-api,payroll-api,insurance-api)
-- Spring Cloud load balancer (Client side load balancing) component in Spring Cloud Gateway acts as reverse proxypective application instances.
+- Spring Cloud load balancer (Client side load balancing) component in Spring Cloud Gateway acts as reverse proxy.
  
 What is covered ?
 - Develop restapi microservices in Java using springboot 
