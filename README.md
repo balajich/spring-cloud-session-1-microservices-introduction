@@ -39,26 +39,23 @@ What is covered ?
 # Running components
 - Registry: ``` java -jar .\registry\target\registry-0.0.1-SNAPSHOT.jar ```
 - Employee API: ``` java -jar .\employee-api\target\employee-api-0.0.1-SNAPSHOT.jar ```
-- Payroll API: ``` java -jar .\payroll-api\target\payroll-api-0.0.1-SNAPSHOT.jar ```
+- Insurance API: 
+    - ``` cd insurance-api ```
+    - ```  pipenv run insurance_api.py ```
 - Gateway: ```java -jar .\gateway\target\gateway-0.0.1-SNAPSHOT.jar ``` 
 
 # Using curl to test environment
 **Note I am running CURL on windows, if you have any issue. Please use postman client, its collection is available 
-at spring-cloud-microservices-hello-world.postman_collection.json**
+at spring-cloud-session-1-microservices-introduction.postman_collection.json**
 - Access employee api directly: ``` curl -s -L  http://localhost:9000/employee/100 ```
 - Access payroll api directly: ``` curl -s -L  http://localhost:9010/payroll/100 ```
+- Access insurance api directly: ``` curl -s -L  http://localhost:9020/insurance/100 ```
 - Access employee api via gateway: ``` curl -s -L  http://localhost:8080/employee/100 ```
 - Access payroll api via gateway: ``` curl -s -L  http://localhost:8080/payroll/100 ```
+- Access insurance api via gateway: ``` curl -s -L  http://localhost:8080/insurance/100 ```
 
-**Note: Users will not access microservices (employee-api,payroll-api) directly. This will always access via gateway**
-# Scale up restapi instances
-Start two new instances of employee-api , payroll-api to handle increasing load 
-- Employee API instance 2: ``` java -jar '-Dserver.port=9091' .\employee-api\target\employee-api-0.0.1-SNAPSHOT.jar ```
-- Payroll API instance 2: ``` java -jar '-Dserver.port=9051' .\payroll-api\target\payroll-api-0.0.1-SNAPSHOT.jar ```
-**Notice new instances are running on port 9091,9051**
-# Registry UI
-Use Eureka Service registry UI to view all the micro service instances http://localhost:8761
-![EurekaServiceRegistry](EurekaServiceRegistry.PNG "EurekaServiceRegistry")
+**Note: Users will not access microservices (employee-api,payroll-api,insurance-api) directly. This will always access via gateway**
+# Code
 # Next Steps
 - Enhance existing application to run employee-api and payroll-api on dynamic ports.
 - Ideally we will not care on which ports employee-api and payroll-api is running because we don't access the api directly, We always use gateway.
