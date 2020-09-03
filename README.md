@@ -37,8 +37,8 @@ What is covered ?
  **Note: Maven is build and dependency tool for Java where as Pipenv is dependency tool for Python**
  
 # Running components
-- Registry: ``` java -jar .\registry\target\registry-0.0.1-SNAPSHOT.jar ```
 - Employee API: ``` java -jar .\employee-api\target\employee-api-0.0.1-SNAPSHOT.jar ```
+- Payroll API: ``` java -jar .\payroll-api\target\payroll-api-0.0.1-SNAPSHOT.jar ```
 - Insurance API: 
     - ``` cd insurance-api ```
     - ```  pipenv run insurance_api.py ```
