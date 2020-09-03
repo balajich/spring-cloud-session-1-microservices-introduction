@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "758b7cc2-781f-45a8-a481-0b311d666ebb",
+		"name": "spring-cloud-session-1-microservices-introduction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1-Get employee details -  Employee API Server Directly",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/employee/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"employee",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2-Get payroll details of employee -  Payroll API Server Directly",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9010/payroll/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9010",
+					"path": [
+						"payroll",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3-Get  Insurance Details of employee -  insurance API Server Directly",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9020/insurance/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9020",
+					"path": [
+						"insurance",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4-Get employee details - via Gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5-Get payroll details of employee - via Gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/payroll/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payroll",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6-Get insurance details of employee - via Gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/insurance/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"insurance",
+						"100"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
