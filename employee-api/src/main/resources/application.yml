@@ -2,4 +2,4 @@ spring:
   application:
     name: employee-api
 server:
-  port: 9090
+  port: 9000
