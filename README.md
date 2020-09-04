@@ -1,7 +1,7 @@
 # Spring Cloud Session1 Microservices Introduction
 In this tutorial we are going build three microservices and expose their service via gateway. User will
 access the services via gateway. Two services (employee-api,payroll-api) is developed in Java and insurance-api is 
-developed in python. All the services are simple http REST apis.
+developed in Python. All the services are simple http REST apis.
 
 Overview
 - Run employee-api service on 9000. Where it takes employee id and returns employee name.
@@ -56,6 +56,54 @@ at spring-cloud-session-1-microservices-introduction.postman_collection.json**
 
 **Note: Users will not access microservices (employee-api,payroll-api,insurance-api) directly. This will always access via gateway**
 # Code
+Employee API is a simple spring boot based rest-api. Snippet of **EmployeeController**
+```java
+ // Initialize database
+    private static final Map<Integer, Employee> dataBase = new HashMap<>();
+    static {
+        dataBase.put(100, new Employee(100,"Alex"));
+        dataBase.put(101, new Employee(101,"Tom"));
+    }
+
+
+    @RequestMapping(value = "/employee/{employeeId}", method = RequestMethod.GET)
+    public Employee getEmployeeDetails(@PathVariable int employeeId) {
+        logger.info(String.format("Getting Details of Employee with id %s",employeeId ));
+        return dataBase.get(employeeId);
+    }
+```
+Insurance API is a simple rest-api based on  Python Flask .  Snippet of **insurance_api.py**
+```python
+database = {100: {'id': 100, 'insurance': 10000}, 101: {'id': 101, 'insurance': 15000}}
+
+
+class InsuranceController(Resource):
+    def get(self, id):
+        return database.get(id)
+
+
+api.add_resource(InsuranceController, '/insurance/<int:id>')
+```
+Gateway is a Spring boot application which uses Spring Cloud Load Balancer for Client Side Load balancing. 
+It is mainly configuration driven  **application.yml**  
+```yaml
+cloud:
+    gateway:
+      routes:
+        - id: employee-api
+          uri: http://localhost:9090
+          predicates:
+            - Path=/employee/**
+        - id: payroll-api
+          uri: http://localhost:9010
+          predicates:
+            - Path=/payroll/**
+        - id: insurance-api
+          uri: http://localhost:9020
+          predicates:
+            - Path=/insurance/**
+```
+
 # Next Steps
 - Enhance existing application to run employee-api and payroll-api on dynamic ports.
 - Ideally we will not care on which ports employee-api and payroll-api is running because we don't access the api directly, We always use gateway.
