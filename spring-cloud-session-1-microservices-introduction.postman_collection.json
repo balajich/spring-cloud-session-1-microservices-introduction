@@ -11,12 +11,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:9090/employee/100",
+					"raw": "http://localhost:9000/employee/100",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9090",
+					"port": "9000",
 					"path": [
 						"employee",
 						"100"

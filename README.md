@@ -91,7 +91,7 @@ cloud:
     gateway:
       routes:
         - id: employee-api
-          uri: http://localhost:9090
+          uri: http://localhost:9000
           predicates:
             - Path=/employee/**
         - id: payroll-api
