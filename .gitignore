@@ -32,3 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 /.mvn/
+/spring-cloud-session-1-microservices-introduction.mp4

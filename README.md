@@ -18,8 +18,8 @@ What is covered ?
 # Source Code 
 ``` git clone https://github.com/balajich/spring-cloud-session-1-microservices-introduction.git ```
 # Video
-[![Spring Cloud LoadBalancer](https://img.youtube.com/vi/8HQR6GdtI9o/0.jpg)](https://www.youtube.com/watch?v=8HQR6GdtI9o)
-- https://youtu.be/8HQR6GdtI9o
+[![ Spring Cloud Session1 Microservices Introduction](https://img.youtube.com/vi/hBzdzuPhq28/0.jpg)](https://www.youtube.com/watch?v=hBzdzuPhq28)
+- https://youtu.be/hBzdzuPhq28
 # Architecture
 ![architecture](architecture.png "architecture")
 # Prerequisite
