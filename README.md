@@ -111,4 +111,4 @@ cloud:
 - https://howtodoinjava.com/microservices/microservices-definition-principles-benefits/
 - https://en.wikipedia.org/wiki/Microservices
 # Next Tutorial
-https://github.com/balajich/spring-cloud-microservices-hello-world-dynamic-ports
+- https://github.com/balajich/spring-cloud-session-2-microservices-dynamic-ports
